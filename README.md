@@ -142,7 +142,7 @@ You can connect to:
 bash
 Copy
 Edit
-ws://localhost:8080/igame
+ws://localhost:8585/igame
 Send a JSON message to place a bet:
 
 json
