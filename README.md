@@ -84,7 +84,7 @@ bash
 Copy
 Edit
 docker run -p 8080:8585 igame:latest
-The application will be accessible on http://localhost:8080
+The application will be accessible on http://localhost:8585
 
 🎮 WebSocket Usage
 💡 Place a Bet
