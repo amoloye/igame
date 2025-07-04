@@ -3,6 +3,7 @@ package com.amoloye.yolo.Igame.service;
 
 import com.amoloye.yolo.Igame.responseDto.PlayerBet;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.socket.WebSocketSession;
@@ -20,6 +21,9 @@ public class GameService {
 
     private final BetProcessor betProcessor;
     private final RoundManager roundManager;
+
+    @Value("${game.round.delay}")
+    private long delay;
 
     public GameService(BetProcessor betProcessor, RoundManager roundManager) {
         this.betProcessor = betProcessor;
@@ -85,7 +89,7 @@ public class GameService {
 
      //Starts a game round every 30 seconds.
 
-    @Scheduled(fixedDelay = 10)
+    @Scheduled(fixedDelay = 10_000)
     private void startRound() {
         log.info("====== ROUND START ======");
 
