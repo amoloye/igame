@@ -85,7 +85,7 @@ public class GameService {
 
      //Starts a game round every 30 seconds.
 
-    @Scheduled(fixedDelay = 30_000)
+    @Scheduled(fixedDelay = 10)
     private void startRound() {
         log.info("====== ROUND START ======");
 
