@@ -22,8 +22,6 @@ public class GameService {
     private final BetProcessor betProcessor;
     private final RoundManager roundManager;
 
-    @Value("${game.round.delay}")
-    private long delay;
 
     public GameService(BetProcessor betProcessor, RoundManager roundManager) {
         this.betProcessor = betProcessor;
