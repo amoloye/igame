@@ -26,17 +26,16 @@ public class GameService {
         this.roundManager = roundManager;
     }
 
-    /**
-     * Adds a new player connection.
-     */
+
+     //Adds a new player connection.
+
     public void addPlayer(WebSocketSession session) {
         playerMap.put(session, session.getId());
         log.info("Player connected: {}", session.getId());
     }
 
-    /**
-     * Removes a disconnected player and cleans up their nickname.
-     */
+
+     // Removes a disconnected player and cleans up their nickname.
     public void removePlayer(WebSocketSession session) {
         String sessionId = playerMap.remove(session);
         // Also remove any bet and nickname associated with the session
@@ -50,9 +49,9 @@ public class GameService {
         log.info("Player disconnected: {}", sessionId);
     }
 
-    /**
-     * Processes an incoming bet message.
-     */
+
+     //Processes an incoming bet message.
+
     public void processBet(WebSocketSession session, String json) {
         try {
             betProcessor.process(json).ifPresentOrElse(
@@ -83,9 +82,9 @@ public class GameService {
         }
     }
 
-    /**
-     * Starts a game round every 30 seconds.
-     */
+
+     //Starts a game round every 30 seconds.
+
     @Scheduled(fixedDelay = 30_000)
     private void startRound() {
         log.info("====== ROUND START ======");
