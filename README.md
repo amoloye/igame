@@ -59,30 +59,17 @@
 git clone https://github.com/your-username/Igame.git
 cd Igame
 🧪 Run Tests
-bash
-Copy
-Edit
 ./gradlew test
 🔧 Build the Project
-bash
-Copy
-Edit
 ./gradlew clean build
 The JAR file will be located in build/libs/Igame-0.0.1-SNAPSHOT.jar
 
 🐳 Docker
 Build Docker Image
 Make sure the JAR is built first:
-
-bash
-Copy
-Edit
 ./gradlew build
 docker build -t igame:latest .
 Run Container
-bash
-Copy
-Edit
 docker run -p 8080:8585 igame:latest
 The application will be accessible on http://localhost:8585
 
@@ -113,10 +100,6 @@ amount: Positive numeric value (BigDecimal)
 
 🧪 Testing RTP
 Run a simulation of 1,000,000 rounds:
-
-bash
-Copy
-Edit
 ./gradlew test --tests GameRTPTest
 Expected RTP: ~99%
 
@@ -138,10 +121,6 @@ Igame/
 └── README.md
 ✨ Sample WebSocket Usage
 You can connect to:
-
-bash
-Copy
-Edit
 ws://localhost:8585/igame
 Send a JSON message to place a bet:
 
